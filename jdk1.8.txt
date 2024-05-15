@@ -1,16 +1,19 @@
+https://github.com/sandipmohapatra/DAIMLER
+
+-----------------------------------------------------------------------
 Java 1.8 features
 --------------------------
 1)Java is Object Oriented programming Language.
-2)Java is simpler then c and c++ as we don't have pointer concept,Multiple Inheritance,operator overloading.
+2)Java is simpler then c and c++ as we don't have pointer concept, Multiple Inheritance, operator overloading.
 3)Java supports multi-threading or multi-tasking.
-4)We can develop web-application,network application,standalone application and also mobile application.
+4)We can develop web-application,network application, standalone application and also mobile application.
 5)In java we interface which support the concept of multiple inheritance.
-6)In java we have constructor but no destructor.There is automatic garbage clearance.
-7)java is secured language.we have 4 access specifier private,public,protected,default.
+6)In java we have constructor but no destructor. There is automatic garbage clearance.
+7)java is secured language. we have 4 access specifier private, public, protected, default.
 
 ------------------------------------------
 Data types
----------------------------------------------------------
+------------------------------------------
 primative datatype
 -------------------------
 1)byte - 1 byte
@@ -38,10 +41,10 @@ iii)assignment :- =,!=
 iv)bitwise :- >>,<<
 3)ternary :- :,?
 --------------------------------------
-we have 4 access specifier private,public,protected,default.
+we have 4 access specifier private, public, protected, default.
 
 1)private :- if we declare variable and methods as private we can access it within the class only.
-2)public :- if we declare variable and methods as public we can access it within the class,outside the class and also outside the package.
+2)public :- if we declare variable and methods as public we can access it within the class, outside the class and also outside the package.
 3)protected :- if we declare variable and methods as protected we can access it within the class and also outside the child class.
 4)default :- if we declare variable and methods as default we can access it within the class ,out side the class but not outside the package.
 ------------------------------------------------------------------------------------------------------------------------
@@ -61,7 +64,7 @@ program-2
 ----------------------
 package monday;
 
-public class First
+public class FirstPrg
 {
 public static void main(String[] args) 
 {
@@ -120,6 +123,42 @@ Question-1
 wap to enter a student data and display it.
 rollno,name,physics,chem,maths marks.
 -------------------------------------------------------------------------
+package day1;
+import java.util.*;
+public class Student 
+{
+	int rollno;
+	String name,address;
+	float phy,chem,maths,total,avg;
+	void input()
+	{
+		Scanner ob=new Scanner(System.in);
+		System.out.println("enter rollno,name,address");
+		rollno=ob.nextInt();
+		name=ob.next();
+		address=ob.next();
+		System.out.println("enter physics,chemistry,maths marks");
+		phy=ob.nextFloat();
+		chem=ob.nextFloat();
+		maths=ob.nextFloat();
+		total=phy+chem+maths;
+		avg=total/3;
+	}
+	void display()
+	{
+		System.out.println("rollno is "+rollno+"Name is "+name);
+		System.out.println("the address is "+address);
+		System.out.println("The total is "+total);
+		System.out.println("The average is "+avg);
+	}
+public static void main(String[] args) {
+	Student ob1=new Student();
+	ob1.input();
+	ob1.display();
+	System.out.println(ob1.total);
+}
+}
+-------------------------------------------------------------------------------------------------
 Program-4
 ---------------------
 package monday;
