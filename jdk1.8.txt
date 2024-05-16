@@ -593,7 +593,7 @@ public class Student1
 	}
 }
 
-------------------------------------------------------------------------------------------------------
+--------------------------------------------Searching of employee---------------------------------------------- 
 //wap to enter details of few employees
 //empno,name,address,dept,salary
 //enter the empno for which you want to see the details. 
@@ -603,14 +603,14 @@ public class Student1
 
 question-3
 create a bank class 
-accno,name,email,Balance for 20 customers.
+accno, name, email, Balance for 20 customers.
 store the data and display it.
 -------------------------------------------------------------------------------
 Inheritance
 ----------------------
 It is one of the oops concept
-Reuse of existing code.and we can add some more features to it.
-example :- iPhone10 to iPhone11 some new features are add to the older version.
+Reuse of existing code. and we can add some more features to it.
+example :- iPhone10 to iPhone15 some new features are add to the older version.
 There are 5 types of Inheritance.
 1)single Inheritance
 2)multi-level Inheritance
@@ -690,6 +690,68 @@ dept class:- loc,designation,dept
 salary class :- salary,Hra,Itax
 display the employee details
 -----------------------------------------------------------------------------
+package day2;
+
+public class Employee 
+{
+	int empno;
+	String name,address;
+	public Employee(int empno, String name, String address) 
+	{
+		this.empno = empno;
+		this.name = name;
+		this.address = address;
+	}
+void display()
+{
+	System.out.println("The empno is "+empno+" The name is "+name+" The address is "+address);
+}
+}
+-------------------------------------------------------------------------------
+package day2;
+
+public class Dept extends Employee 
+{
+String loc,designation,dept;
+
+public Dept(int empno, String name, String address, String loc, String designation, String dept) 
+{
+	super(empno, name, address);//first the super class constructor will execute
+	this.loc = loc;
+	this.designation = designation;
+	this.dept = dept;
+}
+void display()
+{
+	super.display();
+	System.out.println("the location is "+loc+" the designation is "+designation+" The deptment is "+dept);
+}
+}
+--------------------------------------------------------------------------------------------------------
+package day2;
+
+public class Salary extends Dept 
+{
+float salary;
+
+public Salary(int empno, String name, String address, String loc, String designation, String dept, float salary) 
+{
+	super(empno, name, address, loc, designation, dept);
+	this.salary = salary;
+	}
+void display()
+{
+	super.display();
+	System.out.println("the salary is "+salary);
+	System.out.println("the HRA is "+(salary*.1));
+	System.out.println("the ITax is "+(salary*.25));
+	}
+public static void main(String[] args) {
+	Salary ob=new Salary(101,"sandip","Bangalore","India","Dev","Sales",78000.00f);
+	ob.display();
+}
+}
+---------------------------------------------------------------------------------------------------------------------------
 How to use constructor during inheritance.
 --------------------------------------------------------------------
 program-12
