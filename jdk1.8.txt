@@ -260,7 +260,6 @@ public class Bank
 	}
 }
 ---------------------------------------------------------------------------------------------------
-
 Constructor
 -----------------------------
 A constructor is a method which has the same name as that of the class name.
@@ -550,6 +549,58 @@ public class Student1
 	}
 }
 ----------------------------------------------------------------------
+package day2;
+import java.util.*;
+public class Student1 
+{
+	int rollno;
+	String name,address;
+	void input()
+	{
+		Scanner ob=new Scanner(System.in);
+		System.out.println("Enter rollno,name,address");
+		rollno=ob.nextInt();//it excepts space in between
+		name=ob.next();
+		address=ob.next();
+	}
+	void display()
+	{
+		System.out.println("the rollno is "+rollno);
+		System.out.println("the name is "+name);
+		System.out.println("the address is "+address);
+	}
+	public static void main(String[] args) {
+		Student1[] obj=new Student1[3];
+		
+		for(int i=0;i<3;i++)
+		{
+			System.out.println("enter data of student no"+(i+1));
+			obj[i]=new Student1();
+			obj[i].input();
+		}
+		Scanner ob=new Scanner(System.in);
+		System.out.println("enter the rollno who's details you see");
+		int x=ob.nextInt();
+				for(int i=0;i<3;i++)
+		{
+			if(obj[i].rollno==x)
+			{
+			System.out.println("data of student no"+(i+1));
+			obj[i].display();
+			}
+		}
+
+	}
+}
+
+------------------------------------------------------------------------------------------------------
+//wap to enter details of few employees
+//empno,name,address,dept,salary
+//enter the empno for which you want to see the details. 
+------------------------------------------------------------------------------------------------
+
+
+
 question-3
 create a bank class 
 accno,name,email,Balance for 20 customers.
