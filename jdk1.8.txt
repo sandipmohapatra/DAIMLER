@@ -614,7 +614,7 @@ example :- iPhone10 to iPhone15 some new features are add to the older version.
 There are 5 types of Inheritance.
 1)single Inheritance
 2)multi-level Inheritance
-3)hyrarchal Inheritance
+3)hierarchal Inheritance
 ----------------------Java doesn't support---------------------------------
 4)multiple inheritance
 5)Hybrid inheritance(combination)
@@ -622,6 +622,53 @@ There are 5 types of Inheritance.
 we use the keyword extends to inherite the parent class into the child class.
 we use the keyword super to access the parent class variables and methods into the child class.
 -------------------------------------------------------------------------------------
+package day3;
+
+public class Student 
+{
+int rollno;
+String name,address;
+public Student(int rollno, String name, String address) 
+{
+	this.rollno = rollno;
+	this.name = name;
+	this.address = address;
+}
+void display()
+{
+	System.out.println("the rollno is "+rollno+"The name is "+name+"The address is "+address);
+}
+}
+---------------------------------------------------------------------------------------
+package day3;
+
+public class Marks extends Student
+{
+float phy,chem,maths;
+
+public Marks(int rollno, String name, String address, float phy, float chem, float maths) 
+{
+	super(rollno, name, address);//parent class constructor will execute first then the child 									class constructor
+	this.phy = phy;
+	this.chem = chem;
+	this.maths = maths;
+}
+
+void display()
+{
+	super.display();
+	System.out.println("the physics marks is "+phy+"The chemistry marks is "+chem+"The maths marks is"+maths);
+	float total=phy+chem+maths;
+	float avg=total/3;
+	System.out.println("The total is "+total);
+	System.out.println("the average is "+avg);
+}
+public static void main(String[] args) {
+	Marks ob=new Marks(1,"sandip","Bangalore",66,77,64);
+	ob.display();
+}
+}
+--------------------------------------------------------------------------------------------
 Program-11
 ------------------------
 package Tuesday;
@@ -955,7 +1002,7 @@ static keyword
 final keyword
 -----------------------------------------------------------------------------------------------------------------
 polymorphism:-
-Method Overloading :- compile time Polymerphism.we need one class.
+Method Overloading :- compile time Polymorphism. we need one class.
 The method name is same but the return type and parameter has different data type.
 example:-
 int sum(int a,int b);
