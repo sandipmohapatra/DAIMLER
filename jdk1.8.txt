@@ -994,6 +994,54 @@ Bank has-a customer
 bank :- accno,branch,balance,customer(object of the customer class)
 Customer :- custid,name,address
 --------------------------------------------------------------------
+Answer
+--------------------------
+package day3;
+
+public class Bank
+{
+int accno;
+String acctype;
+Float balance;
+public Bank(int accno, String acctype, Float balance) 
+{
+	this.accno = accno;
+	this.acctype = acctype;
+	this.balance = balance;
+}
+@Override
+public String toString() {
+	return "Bank [accno=" + accno + ", acctype=" + acctype + ", balance=" + balance + "]";
+}
+
+}
+---------------------------------------------------------------------------------
+package day3;
+
+public class Customer 
+{
+String name,address;
+Bank bank;
+public Customer(String name, String address, Bank bank)
+{
+	this.name = name;
+	this.address = address;
+	this.bank = bank;
+}
+void display()
+{
+	System.out.println("the name is "+name);
+	System.out.println("the address is "+address);
+	System.out.println("the bank details is "+bank);
+}
+public static void main(String[] args) 
+{
+	Bank ob1=new Bank(101,"Saving",7800.50f);
+	Customer ob2=new Customer("sandip","Bangalore",ob1);
+	ob2.display();
+}
+}
+-----------------------------------------------------------------------------------------
 Method Overloading:-
 Method Overriding:-
 Abstract class
