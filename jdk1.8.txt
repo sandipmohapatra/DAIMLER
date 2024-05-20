@@ -593,14 +593,12 @@ public class Student1
 	}
 }
 
---------------------------------------------Searching of employee---------------------------------------------- 
+--------------------------------------------Searching of employee------------------------------- 
+question-2
 //wap to enter details of few employees
 //empno,name,address,dept,salary
 //enter the empno for which you want to see the details. 
 ------------------------------------------------------------------------------------------------
-
-
-
 question-3
 create a bank class 
 accno, name, email, Balance for 20 customers.
@@ -1041,7 +1039,7 @@ public static void main(String[] args)
 	ob2.display();
 }
 }
------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------
 Method Overloading:-
 Method Overriding:-
 Abstract class
@@ -1088,7 +1086,7 @@ public static void main(String[] args) {
 }
 
 ------------------------------------------------------------------------------------------------------
-Method Overriding:- runtime Polymerphism.(abstract class,Interface).we need two or more class.
+Method Overriding:- runtime Polymorphism.(abstract class, Interface).we need two or more class.
 ------------------------------------------------------------------------------------------------------
 program-16
 ---------------------
@@ -1483,7 +1481,7 @@ All datatypes in java are also class known as wrapper class.
 7)long - Long
 8)char - Character
 9)boolean - Boolean
-These class belongs to lang package.It is a default package.
+These class belongs to lang package. It is a default package.
 ---------------------------------------------------------------------
 javap java.lang package ---->Integer
 javap java.lang.String
@@ -2091,10 +2089,10 @@ int a[]=new int[5]; ---------------array the size is fixed.
 In case of Collection the size will be incrementing dyamically as we enter the data.
 ---------------------------------------------------------------
 It is a collection of Object.
-It provides architecture to store,manupulate group of Objects.
-We can do all operations such as searching,sorting,inserting,delete,manupulating .
+It provides architecture to store, manipulate group of Objects.
+We can do all operations such as searching, sorting, inserting, delete, manipulating .
 1)Set 2)List 3)Map
-Set is a Interface .It doesnot allow duplicate data.
+Set is a Interface . It doesnot allow duplicate data.
 It has classes :-
 1)TreeSet :- It will display the data in the shorted order.
 2)HashSet :-It will display the data in random order.
@@ -2197,8 +2195,10 @@ System.out.println(ts);
 }
 }
 --------------------------------------------------------------------------------------------------
+Assignment-2
+-------------------------------
 wap to enter data of few employees into a LinkedHashSet and display it.
-empno,name,salary
+empno,name,salary.
 ------------------------------------------------------------------------------------------------------
 AutoBoxing and Unboxing
 ------------------------------------------
