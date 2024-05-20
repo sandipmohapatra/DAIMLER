@@ -595,9 +595,9 @@ public class Student1
 
 --------------------------------------------Searching of employee------------------------------- 
 question-2
-//wap to enter details of few employees
-//empno,name,address,dept,salary
-//enter the empno for which you want to see the details. 
+wap to enter details of few employees
+empno, name, address, dept, salary
+enter the empno for which you want to see the details. 
 ------------------------------------------------------------------------------------------------
 question-3
 create a bank class 
@@ -931,7 +931,7 @@ public static void main(String[] args) {
 -------------------------------------------------------------------------
 *super constructor will execute first.
 -----------------------------------------------------------------------
-In inheritance the child class will depend upon the parent class.It is known as tight coupling.
+In inheritance the child class will depend upon the parent class. It is known as tight coupling.
 Java supports loose coupling.
 Inheritance(IS-A) relationship.
 Aggregation(HAS-A) relationship.
@@ -1119,7 +1119,7 @@ The child class display() is overriding on the parent class display().The parent
 Abstract class
 ------------------------
 It is a class which contain abstract method means method without body.
-It can also contain method with body known as concret method.
+It can also contain method with body known as concrete method.
 we cannot create object of the abstract class.
 we have to inherite it into a child class where we have to override the abstract methods.
 Then we can create object for the child class.
@@ -1130,6 +1130,38 @@ We can have a constructor in the abstract class.
 *abstract windowing toolkit(AWT)
 
 -------------------------------------------------------------------
+package Day4;
+abstract class Student
+{
+	abstract void details();
+	abstract void marks();
+	void collegename()
+	{
+		System.out.println("Welcome ITR college of Eng..");
+	}
+}
+public class AbstractClassDemo extends Student
+{
+
+	@Override
+	void details() {
+	System.out.println("The student name is Raju");
+	}
+
+	@Override
+	void marks() {
+		System.out.println("The student marks is 80%");
+		
+	}
+	public static void main(String[] args) {
+		AbstractClassDemo ob=new AbstractClassDemo();
+		Student ob1=new AbstractClassDemo();
+		ob.details();
+		ob.marks();
+	}
+
+}
+--------------------------------------------------------------------------------------------
 program-17
 ------------------
 package Wednesday;
@@ -2082,11 +2114,11 @@ StringBuilder is not synchronized.
 StringBuffer takes more time to execute than StringBuilder.
 Thread synchronized means one thread complete excecution then the next thread will start execute.
 example :-ATM (one person will do the transaction then the second person will do the transaction).
------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
 Collection Framework
 ----------------------------------------
 int a[]=new int[5]; ---------------array the size is fixed.
-In case of Collection the size will be incrementing dyamically as we enter the data.
+In case of Collection the size will be incrementing dynamically as we enter the data.
 ---------------------------------------------------------------
 It is a collection of Object.
 It provides architecture to store, manipulate group of Objects.
