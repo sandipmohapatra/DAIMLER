@@ -285,3 +285,9 @@ public static void main(String[] args)throws Exception
 		System.out.println("row deleted");
 				}}
 ----------------------------------------------------------------------------------------------------------------------
+Assignment-4
+-------------------------
+create a bank class having accno, name, balance,
+insert data, update data or delete data from the table as per the requirement.
+----------------------------------------------------------------------------------------------------
+
