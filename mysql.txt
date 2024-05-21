@@ -163,6 +163,8 @@ location VARCHAR(30) DEFAULT NULL,
 PRIMARY KEY(studid,NAME)
 );
 ------------------------------End Of MySql-----------------------------------
+JDBC
+---------------
 program-1
 -------------------
 package Day5;
@@ -177,7 +179,7 @@ public static void main(String[] args)throws Exception
 	int studid=ob.nextInt();
 	String name=ob.next();
 	String address=ob.next();
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");//driver will be loaded
 		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/daimler","root","1234");
 		PreparedStatement st=con.prepareStatement("insert into student1 values(?,?,?)");
 		st.setInt(1, studid);
@@ -188,4 +190,30 @@ public static void main(String[] args)throws Exception
 		
 		}
 }
--------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------
+program-2
+-------------------
+package Day5;
+import java.sql.*;
+import java.util.*;
+public class Student 
+{
+public static void main(String[] args)throws Exception
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter rollno who's name,address you want to update");
+	int rollno=ob.nextInt();
+	String name=ob.next();
+	String address=ob.next();
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/daimler","root","1234");
+		PreparedStatement st=con.prepareStatement("update student1 set name=? ,address=? where  rollno=?");
+		st.setString(1,name);
+		st.setString(2,address);
+		st.setInt(3, rollno);
+		st.execute();
+		System.out.println("row updated");
+		
+		}
+}
+--------------------------------------------------------------------------------------------
