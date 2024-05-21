@@ -238,3 +238,50 @@ public static void main(String[] args)throws Exception
 				}
 }
 --------------------------------------------------------------------------------------------------------------
+program-4
+----------------
+import java.sql.*;
+import java.util.*;
+public class Student 
+{
+public static void main(String[] args)throws Exception
+{
+    	Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/daimler","root","1234");
+		Statement st=con.createStatement();
+		st.execute("insert into student1 values(101,'sandip','Bangalore')");
+		System.out.println("row inserted");
+				}}
+--------------------------------------------------------------------------------------------------------
+program-5
+---------------------
+package Day5;
+import java.sql.*;
+import java.util.*;
+public class Student 
+{
+public static void main(String[] args)throws Exception
+{
+    	Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/daimler","root","1234");
+		Statement st=con.createStatement();
+		st.execute("update student1 set name='sandeep' ,address='Pune' where rollno=101");
+		System.out.println("row update");
+				}}
+--------------------------------------------------------------------------------------------------------
+program-6
+---------------------
+package Day5;
+import java.sql.*;
+import java.util.*;
+public class Student 
+{
+public static void main(String[] args)throws Exception
+{
+    	Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/daimler","root","1234");
+		Statement st=con.createStatement();
+		st.execute("delete from student1 where rollno=101");
+		System.out.println("row deleted");
+				}}
+----------------------------------------------------------------------------------------------------------------------
