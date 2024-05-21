@@ -4,10 +4,10 @@ To see the databases
 1)show databases;
 -----------------------------------------------------
 to create database
-2)create database mphasis;
+2)create database daimler;
 --------------------------------------------------------
 to goto the database
-3)use mphasis;
+3)use daimler;
 -------------------------------------------------------------------------------------------
 to create table
 create table student (rollno int,name varchar(30),address varchar(30));
