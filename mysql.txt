@@ -217,3 +217,24 @@ public static void main(String[] args)throws Exception
 		}
 }
 --------------------------------------------------------------------------------------------
+program-3
+---------------------
+package Day5;
+import java.sql.*;
+import java.util.*;
+public class Student 
+{
+public static void main(String[] args)throws Exception
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter rollno to delete");
+	int rollno=ob.nextInt();
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/daimler","root","1234");
+		PreparedStatement st=con.prepareStatement("delete from student1 where  rollno=?");
+		st.setInt(1, rollno);
+		st.execute();
+		System.out.println("row deleted");
+				}
+}
+--------------------------------------------------------------------------------------------------------------
