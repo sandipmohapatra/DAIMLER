@@ -10,7 +10,7 @@ to goto the database
 3)use daimler;
 -------------------------------------------------------------------------------------------
 to create table
-create table student (rollno int,name varchar(30),address varchar(30));
+create table student (rollno int, name varchar(30),address varchar(30));
 --------------------------------------------------------------
 to insert data into the table
 insert into student values(101,'sandip','Bangalore');
@@ -40,7 +40,7 @@ to drop a table
 drop table student;
 
 to drop a database
-drop database mphasis;
+drop database daimler;
 
 to update a row
 update student set address='pune' where rollno=101;
@@ -163,3 +163,29 @@ location VARCHAR(30) DEFAULT NULL,
 PRIMARY KEY(studid,NAME)
 );
 ------------------------------End Of MySql-----------------------------------
+program-1
+-------------------
+package Day5;
+import java.sql.*;
+import java.util.*;
+public class Student 
+{
+public static void main(String[] args)throws Exception
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter studID,name,address");
+	int studid=ob.nextInt();
+	String name=ob.next();
+	String address=ob.next();
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/daimler","root","1234");
+		PreparedStatement st=con.prepareStatement("insert into student1 values(?,?,?)");
+		st.setInt(1, studid);
+		st.setString(2,name);
+		st.setString(3,address);
+		st.execute();
+		System.out.println("row inserted");
+		
+		}
+}
+-------------------------------------------------------------------------------------------------------------------------
