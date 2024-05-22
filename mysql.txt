@@ -293,7 +293,66 @@ Assignment-4
 create a bank class having accno, name, balance,
 insert data, update data or delete data from the table as per the requirement.
 use case and switch or if and else 
-----------------------------------------------------------------------------------------------
+------------------------------------------Answer----------------------------------------------------
+import java.sql.*;
+import java.util.Scanner;
+public class bank {
+              public static void main(String[] args)throws Exception
+              {
+                             Scanner ob=new Scanner(System.in);
+                             Class.forName("com.mysql.cj.jdbc.Driver");
+                             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/daimlertruck","root","1234");
+                      System.out.println("enter 1 for inserting data into bank database");
+                      System.out.println("enter 2 for updating data into bank database");
+                      System.out.println("enter 3 for deleting data into bank database");
+                        int ch=ob.nextInt();
+                             int accno;
+                             String bname;
+                             float balance;
+      if(ch==1)
+                             {
+                                   PreparedStatement st=con.prepareStatement("insert into bank values(?,?,?)");
+                                   System.out.println("enter the account number ,name and balance");
+                                   accno=ob.nextInt();
+                                   bname=ob.next();
+                                   balance=ob.nextFloat();
+                                           st.setInt(1, accno);
+                                           st.setString(2,bname);
+                                           st.setFloat(3,balance);
+                                           st.execute();
+                                           System.out.println("row inserted");
+                             }
+        else if (ch==2)
+                             {
+  PreparedStatement st=con.prepareStatement("update bank set bname=? ,balance=? where  accno=?");
+  System.out.println("enter the account number ,name and balance");
+                                                    accno=ob.nextInt();
+                                                    bname=ob.next();
+                                           balance=ob.nextFloat();
+                                                          st.setString(1,bname);
+                                                          st.setFloat(2,balance);
+                                                          st.setInt(3, accno);
+                                                          st.execute();
+                                                          System.out.println("row updated");
+                             }
+        else if(ch==3)
+                                           {
+                          PreparedStatement st =con.prepareStatement("delete from bank where accno=?");
+                           System.out.println("enter the account number");
+                                                          accno=ob.nextInt();
+                                                          st.setInt(1,accno);          
+                                               st.execute();
+                                                          System.out.println("Row deleted");
+                                           }
+                             else
+                                           {
+                                                          System.out.println("invalid choice");
+                                           }
+
+              }
+
+}
+---------------------------------------------------------------------------------------------------------
 program-7
 --------------------
 package Day6;
@@ -303,7 +362,7 @@ public class JDBC1
 	public static void main(String[] args)throws Exception
 	{
 	    	Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/daimlertruck","root","1234");
+Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/daimlertruck","root","1234");
 			Statement st=con.createStatement();
 		//	st.execute("create table student1 (rollno int, name varchar(30),address varchar(30))");
 		//	System.out.println("table created");
