@@ -1,3 +1,6 @@
+Tasmiya.7.Taranum@stackroute.in
+------------------------------------------------------
+
 Mysql notes
 ----------------------------------------------------
 To see the databases
@@ -11,7 +14,7 @@ to goto the database
 -------------------------------------------------------------------------------------------
 to create table
 create table student (rollno int, name varchar(30),address varchar(30));
---------------------------------------------------------------
+---------------------------------------------------------------------------------------------
 to insert data into the table
 insert into student values(101,'sandip','Bangalore');
 insert into student values(102,'Rohan','Bangalore');
@@ -44,17 +47,17 @@ drop database daimler;
 
 to update a row
 update student set address='pune' where rollno=101;
-
+--------------------------------------------------------------------------------------------
 wild character
 select * from student where name like 's%';
 select * from student where name like '%p';
 
 -------------------------------------------------------
 to drop database
-4)drop database cognizantstud;
+4)drop database daimler;
 -----------------------------------------------------------------------
 to create a table
-5)create table student
+5)create table student2
 ( studid int not null auto_increment,
 name varchar(30) not null,
 address varchar(30) not null,
@@ -284,10 +287,40 @@ public static void main(String[] args)throws Exception
 		st.execute("delete from student1 where rollno=101");
 		System.out.println("row deleted");
 				}}
-----------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
 Assignment-4
 -------------------------
 create a bank class having accno, name, balance,
 insert data, update data or delete data from the table as per the requirement.
-----------------------------------------------------------------------------------------------------
+use case and switch or if and else 
+----------------------------------------------------------------------------------------------
+program-7
+--------------------
+package Day6;
+import java.sql.*;
+public class JDBC1 
+{
+	public static void main(String[] args)throws Exception
+	{
+	    	Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/daimlertruck","root","1234");
+			Statement st=con.createStatement();
+		//	st.execute("create table student1 (rollno int, name varchar(30),address varchar(30))");
+		//	System.out.println("table created");
+			st.execute("insert into student1 values(101,'sandip','Bangalore')");
+			System.out.println("row inserted");
+
+	}
+}
+-------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
 
