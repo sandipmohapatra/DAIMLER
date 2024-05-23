@@ -287,12 +287,24 @@ public static void main(String[] args)throws Exception
 		st.execute("delete from student1 where rollno=101");
 		System.out.println("row deleted");
 				}}
------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------
 Assignment-4
 -------------------------
 create a bank class having accno, name, balance,
 insert data, update data or delete data from the table as per the requirement.
 use case and switch or if and else 
+
+sandipmohapatra2016@gmail.com
+-------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
 ------------------------------------------Answer----------------------------------------------------
 import java.sql.*;
 import java.util.Scanner;
