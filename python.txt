@@ -99,3 +99,36 @@ match_object = regex_object.search(text)
 # Output  
 print("Match Object:", match_object)  
 ------------------------------------------------------------------------------------------------------------
+example-3
+--------------------function with single parameters-------------------------------------------------
+def lengthofString( string ):    
+        return len(string)    
+    
+ 
+print( "Length of the string is: ", lengthofString( "sandip" ) )    
+print( "Length of the string Python is: ", lengthofString( "Python" ) )
+---------------------------------------------------------------------------------------------------------
+example-4
+--------------------------function with multiple parameters--------------------------------------
+def square( item_list ):    
+     
+    squares = [ ]    
+    for l in item_list:    
+        squares.append( l**2 )    
+    return squares    
+    
+  
+my_list = [17, 52, 8 ,7];    
+my_result = square( my_list )    
+print( "Squares of the list are: ", my_result )    
+------------------------------------------------------------------------------------
+example-5
+--------------------------Dict example---------------------------------------------
+Employee = {"Name": "Dev", "Age": 20, "salary":45000,"Company":"Infosys"}      
+print(type(Employee))      
+print("printing Employee data .... ")      
+print("Name : %s" %Employee["Name"])      
+print("Age : %d" %Employee["Age"])      
+print("Salary : %d" %Employee["salary"])      
+print("Company : %s" %Employee["Company"])   
+---------------------------------------------------------------------------------------------
