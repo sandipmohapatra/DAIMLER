@@ -29,7 +29,7 @@ print(type(list2))
 ---------------------------------------------
 1)it will display in the same order
 2)heterogeneous objects are allowed
-3)diplicate data is allowed
+3)duplicate data is allowed
 4)growable in nature
 5)values should be enclosed in a square brackets.
 -------------------------------------------------------------------------------------
@@ -62,3 +62,40 @@ type(t)
 
 tuple data type is exactly same as list data type except that it is immutable (we cannot change the value)
 ----------------------------------------------------------------------------------------------------
+regular expression
+---------------------------
+example-1
+--------------------
+import re  
+  
+# Our pattern  
+pattern = "hello"  
+  
+# Returns a match object if found else Null  
+match = re.match(pattern, "hello world")  
+  
+print(match) # Printing the match object  
+print("Span:", match.span()) # Return the tuple (start, end)  
+print("Start:", match.start()) # Return the starting index  
+print("End:", match.end()) # Returns the ending index  
+----------------------------------------------------------------------------------------------
+example-2
+-------------------
+# Importing re module  
+import re  
+  
+# Defining regEx pattern  
+pattern = "amazing"  
+  
+# Createing a regEx object  
+regex_object = re.compile(pattern)  
+  
+# String  
+text = "This tutorial is amazing!"   
+  
+# Searching for the pattern in the string  
+match_object = regex_object.search(text)  
+  
+# Output  
+print("Match Object:", match_object)  
+------------------------------------------------------------------------------------------------------------
