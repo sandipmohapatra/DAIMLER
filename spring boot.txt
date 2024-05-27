@@ -1,3 +1,7 @@
+https://spring.io/tools
+
+https://download.eclipse.org/eclipse/updates/4.27/
+--------------------------------------------------------------------------------------------------------------------
 Spring Boot is a project that is built on the top of the Spring Framework. It provides an easier and faster way to set up, configure, and run both simple and web-based applications.
 
 It is a Spring module that provides the RAD (Rapid Application Development) feature to the Spring Framework. It is used to create a stand-alone Spring-based application that you can just run because it needs minimal Spring configuration.
@@ -21,7 +25,7 @@ In Spring Boot, there is no requirement for XML configuration (deployment descri
 12)It also minimizes writing multiple boilerplate codes (the code that has to be included in many places with little or no alteration), XML configuration, and annotations.
 13)It increases productivity and reduces development time.
 
--------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
 Spring Boot follows a layered architecture in which each layer communicates with the layer directly below or above (hierarchical structure) it.
 
 Before understanding the Spring Boot Architecture, we must know the different layers and classes present in it. There are four layers in Spring Boot are as follows:
@@ -35,7 +39,7 @@ Persistence Layer: The persistence layer contains all the storage logic and tran
 Database Layer: In the database layer, CRUD (create, retrieve, update, delete) operations are performed.
 ------------------------------------------------------------------------------------------
 Spring Boot provides a number of starters that allow us to add jars in the classpath. Spring Boot built-in starters make development easier and rapid. Spring Boot Starters are the dependency descriptors.
-----------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
 1)spring-boot-starter-thymeleaf:-	It is used to build MVC web applications using Thymeleaf views.
 2)spring-boot-starter-web-services:-	It is used for Spring Web Services.
 3)spring-boot-starter-mail:-It is used to support Java Mail and Spring Framework's email sending.
@@ -81,7 +85,7 @@ It also controls the default plugin configuration.
 The spring-boot-starter-parent inherits dependency management from spring-boot-dependencies. We only need to specify the Spring Boot version number. If there is a requirement of the additional starter, we can safely omit the version number.
 --------------------------------------Example-1------------------
 file->new->spring starter project
-----------------------------------------------------------------
+---------------------------------------------------------------------
 <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -116,9 +120,7 @@ example :- MyMessage msg=new MyMessage();
 --------------------------------------------------------
 to read object from container we use method
 getBean("objectName",ClassName.class);
-----------------------------------------------------------------------------------------------------------------------------------
-
-package com.example.demo;
+------------------------------------------------------------------------------------------------------------------------------package com.example.demo;
 import java.util.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -128,14 +130,7 @@ import org.springframework.context.ApplicationContext;
 public class SpringBootExample8Application {
 
 	public static void main(String[] args) {
-		ApplicationContext ac=SpringApplication.run(SpringBootExample8Application.class, args);
-		MyMessage mm=ac.getBean("msg",MyMessage.class);
-		mm.welcome();
-		System.out.println("Enter two nos");
-		Scanner ob=new Scanner(System.in);
-		int a=ob.nextInt();
-		int b=ob.nextInt();
-		System.out.println("The sum is "+mm.sum(a,b));
+		
 	}
 
 }
@@ -157,9 +152,9 @@ public int sum(int a,int b)
 	return a+b;
 }
 }
---------------------------------------------------
+-------------------------------------------------------
 application.properties(src/main/resources)
-----------------------------------
+-------------------------------------------------------
 server.port=8090
 -----------------------------------------------------------------
 
@@ -182,7 +177,7 @@ public class SpringBootExample8Application {
 	}
 
 }
----------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
 package com.example.demo;
 import java.util.Map;
 import java.util.Properties;
@@ -404,7 +399,19 @@ public class MyMessage implements CommandLineRunner
 	
 		}
 	}
---------------------------------------------------Example-6--------------------------------------------
+
+----------Assignment-5-------------------------------------------------
+create a employee class and access the details of the employee from the properties files.
+name
+address
+email
+salary
+designation
+
+
+
+
+--------------------------------------------------Example-6--------------
 
 server.port=8090
 
