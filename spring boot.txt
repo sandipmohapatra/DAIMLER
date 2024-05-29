@@ -1,4 +1,5 @@
 https://spring.io/tools
+https://www.anaconda.com/download
 
 https://download.eclipse.org/eclipse/updates/4.27/
 --------------------------------------------------------------------------------------------------------------------
@@ -499,13 +500,13 @@ WebServices
 1)SOAP
 2)REST :- Representational State Transfer.
 -----------------------------------------------------------------
-Rest is an architectural approach.It is not a protocal.
-It uses HTTP protocal.
-we build REST services with both XML and JSON.The data transfermation is done either using JSON or XML.
+Rest is an architectural approach. It is not a protocol.
+It uses HTTP protocol.
+we build REST services with both XML and JSON. The data transformation is done either using JSON or XML.
 We have a resource to represent the data in either XML,HTML or JSON format.
 Restful webservices are platform and language independent.
 ----------------------------------
-We have some methods in HTTP which we used in Rest webservices to enter data,save data,update data or delete data.
+We have some methods in HTTP which we used in Rest webservices to enter data, save data, update data or delete data.
 1)GET :-It is used to read a resource and display the data.
 2)PUT:- It is used to update an existing resource.
 3)POST:- It is used to create a new resource.
@@ -534,7 +535,7 @@ In this data tranformation will be done by using JSON,text,Html,xml
 It can be reused.we can develop webservices using .net,java,php etc.
 We can comunicate with the services.
 
-we have service provider,service consumer,service repository.
+we have service provider, service consumer, service repository.
 --------------------------------------------Example-7---------------------------------------------------
 package com.example.demo;
 
@@ -789,16 +790,26 @@ http://localhost:8090/bookstore/books/5(delete) ----delete the data
 @RequestBody :- It is HttpRequest is mapped with the model data.
 
 @PathVariable :- It is used to handle variables in the request URI mapping and set them as method parameter. 
--------------------------------------------Assignment-1-----------------------------------------------
+-------------------------------------------Assignment-5-----------------------------------------------
 
 Create employee model and do the following operations
-----------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
 public void addEmployee(Employee emp);
 public void editEmployee(Employee emp,int empid);
 public boolean deleteEmployee(int empid);
 public Book getEmployeeById(int empid);
 public List<Employee> getAllEmployee();
----------------------------------------------------SpringBootWebMVC----------------------------------------------------------
+
+----------------------------------------------Assignment-6------------------------------
+create a online food app using spring boot JPA
+
+*refer SpringBootDataJPA2
+-------------------------------------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------SpringBootWebMVC--------------------------
 step-1:-file---new--starter project
 step-2 :- select war and spring web jar files.
 step-3:- create a folder inside webapp---WEB-INF
