@@ -1,6 +1,5 @@
 https://www.online-python.com/online_python_compiler
 ------------------------------------------------------------------------
-
 Data types in Python
 ---------------------------------
 1)int
@@ -54,7 +53,7 @@ set :- If we want to display data without duplicate data then we can go for set.
 -----------------------------------------------------------------------------------
 dict :- It contain key and value pair
 --------------------------------------------------------
-Employee = {"Name": "Johnny", "Age": 32, "salary":26000,"Company":"TCS"}        
+Employee = {"Name": "sandip", "Age": 32, "salary":26000,"Company":"TCS"}        
 print(type(Employee))        
 print("printing Employee data .... ")        
 print(Employee) 
@@ -64,7 +63,33 @@ t=(10,20,30,40,50)
 type(t)
 
 tuple data type is exactly same as list data type except that it is immutable (we cannot change the value)
-----------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+complex
+-------------------------------
+a=10+1.5j 
+b=20+2.5j 
+c=a+b 
+print(c) 
+o/p:- (30+4j)
+---------------------------------------------------------------------
+bool
+--------------
+b=True
+type(b) 
+-------------------
+a=10
+b=20
+c=a<b
+print(c)
+o/p:- true
+--------------------------
+str
+--------------------------
+s1='durga'
+s1="durga"
+print(s1)
+type(s1)
+------------------------------------------------
 regular expression
 ---------------------------
 example-1
@@ -101,18 +126,16 @@ match_object = regex_object.search(text)
   
 # Output  
 print("Match Object:", match_object)  
-------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
 example-3
---------------------function with single parameters-------------------------------------------------
+--------------------function with single parameters-----------------------------
 def lengthofString( string ):    
         return len(string)    
-    
- 
 print( "Length of the string is: ", lengthofString( "sandip" ) )    
 print( "Length of the string Python is: ", lengthofString( "Python" ) )
----------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
 example-4
---------------------------function with multiple parameters--------------------------------------
+--------------------------function with multiple parameters-------------------
 def square( item_list ):    
      
     squares = [ ]    
