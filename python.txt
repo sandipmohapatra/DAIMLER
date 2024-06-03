@@ -1,3 +1,6 @@
+https://www.online-python.com/online_python_compiler
+------------------------------------------------------------------------
+
 Data types in Python
 ---------------------------------
 1)int
@@ -190,7 +193,7 @@ d.bark()
 d.speak()  
 ----------------------------------------------------------------------------
 example-10
-----------------------Multi-level Inheritance---------------------------------
+----------------------Multi-level Inheritance-----------------------
 class Animal:  
     def speak(self):  
         print("Animal Speaking")  
