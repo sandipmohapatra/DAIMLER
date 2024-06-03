@@ -142,8 +142,7 @@ def square( item_list ):
     for l in item_list:    
         squares.append( l**2 )    
     return squares    
-    
-  
+
 my_list = [17, 52, 8 ,7];    
 my_result = square( my_list )    
 print( "Squares of the list are: ", my_result )    
@@ -233,3 +232,24 @@ d.bark()
 d.speak()  
 d.eat()  
 ---------------------------------------------------------------------------------------
+Python Webservices
+----------------------------------
+step 1: !pip install requests
+
+step 2:
+import requests
+api_url = "https://jsonplaceholder.typicode.com/todos/1"
+response = requests.get(api_url)
+response.json()
+---------------------------------------------------------------------------
+default URL
+https://jsonplaceholder.typicode.com/todos
+---------------------------------------------------------------------------
+HTTP 	method	Description
+----------------------------------------------------
+GET			Retrieve an existing resource.
+POST		Create a new resource.
+PUT			Update an existing resource.
+PATCH		Partially update an existing resource.
+DELETE		Delete a resource.
+-----------------------------------------------------------------------------------------
