@@ -1,0 +1,19 @@
+Go to the Official website (https://www.postgresql.org/) of PostgreSQL and click on the Download
+---------------------------------------------------------------------------------------------------------To create table
+Create table department  
+( dept_no int constraint dept_details_pk primary key , dept_name text NOT NULL,Location varchar(15));  
+------------------------------------------------------------------------------------------------
+To insert Data
+insert into department values(103,'purchase','Pune');
+-------------------------------------------------------------------------------------------------
+To view the data
+select * from department;
+-------------------------------------------------------------------------------------------------
+To update the record
+update employee set location='pune' where emp_no=101;
+---------------------------------------------------------------------------------------------------
+To add a column
+alter table employee add column phone_no int;
+
+update employee set phone_no=8897 where emp_no=102;
+----------------------------------------------------------------------------------------------------
