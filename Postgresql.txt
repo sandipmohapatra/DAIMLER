@@ -17,3 +17,17 @@ alter table employee add column phone_no int;
 
 update employee set phone_no=8897 where emp_no=102;
 ----------------------------------------------------------------------------------------------------
+To drop a column
+
+ALTER TABLE employee DROP COLUMN phone_no;  
+--------------------------------------------------------------------------------------------
+To delete a row
+delete from employee where emp_no=101;
+-------------------------------------------------------------------------------
+To display the data in ascending or descending order
+
+SELECT emp_name FROM employee  ORDER BY emp_name ASC;  
+
+SELECT emp_name FROM employee  ORDER BY emp_name desc;  
+------------------------------------------------------------------------------------------------
+
