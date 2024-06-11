@@ -69,3 +69,31 @@ CREATE TABLE Student_groups (
     Stu_name VARCHAR NOT NULL  
 );  
 -----------------------------------------------------------------------
+PostgreSQL CREATE TYPE Command
+----------------------------------------------------------------
+The PostgreSQL CREATE TYPE command provides us to make a composite type that can be used as the return type of a function.
+
+CREATE TYPE Item_details AS (  
+    item_id INT,  
+    item_name VARCHAR,  
+    item_price Numeric(5,2)  
+);  
+--------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION get_Item_details (I_id INT)   
+    RETURNS Item_details AS   
+$$   
+SELECT item_id, item_name,  item_price   
+FROM items  
+WHERE item_id = I_id ;   
+$$   
+LANGUAGE SQL;  
+----------------------------------------------------------------------------------------------
+create table items (item_id int, item_name varchar,  item_price Numeric(9,2))
+
+insert into items values(101,'TV',25000.00)
+
+SELECT * FROM get_Item_details(101);  
+----------------------------------------------------------------------------------------------
+smallint---stores whole numbers, small range.---2 bytes
+integer---stores whole numbers.---	4 bytes
+bigint---stores whole numbers, large range.---8 bytes
