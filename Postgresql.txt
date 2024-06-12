@@ -107,3 +107,49 @@ Variable-length string.
 character varying(size)---Here size is the number of characters to store. 
 Variable-length string.
 ----------------------------------------------------------------------------------------------------
+Example Numeric data
+-----------------------------------------------------
+CREATE TABLE Items (item_id SERIAL PRIMARY KEY, item_name VARCHAR(100) NOT NULL,  
+    item_price NUMERIC(5,2));
+---------------------------------------------------------------------------------------------------------------------------  
+ PostgreSQL, the character data
+---------------------------------------------------------
+CREATE TABLE Char_demo (Id serial PRIMARY KEY,A CHAR (1),B CHAR (10));  
+
+INSERT INTO Char_demo (A, B)  VALUES ('J','Java' );  
+----------------------------------------------------------------------------------------------------------------------------
+ PostgreSQL, the text data
+----------------------------------------------------------------
+CREATE TABLE Text_demo (Id serial PRIMARY KEY,A TEXT,B TEXT);  
+------------------------------------------------------------------------
+INSERT INTO Text_demo (A, B)  VALUES ('Java', 'It is a demo test for Text' );  
+-------------------------------------------------------------------------
+INSERT INTO Text_demo2 (A, B)  
+VALUES   
+('Javatpoint', 'The Best Portal to Learn Technologies'),   
+('Latest tutorial', 'Trending technologies');  
+-------------------------------------------------------------------------------------------------------------------------------------
+PostgreSQL Varchar data type
+--------------------------------------------------
+CREATE TABLE Varchar_demo ( Id serial PRIMARY KEY, P VARCHAR(1), Q VARCHAR(50));  
+INSERT INTO Varchar_demo (P, Q) VALUES ('J','It is a demo for Varchar');  
+-------------------------------------------------------------------------------------------------------------------------------------------
+PostgreSQL Boolean data types
+---------------------------------------------------------------------
+CREATE TABLE Items_in_stock  (  
+   Items_id INT PRIMARY KEY,  
+   In_stock BOOLEAN NOT NULL  
+);  
+-----------------------------------------------------------------------------------------------------
+INSERT INTO Items_in_stock (Items_id,In_stock )  
+VALUES  
+    (101, TRUE),  
+    (201, FALSE),  
+    (301, 't'),  
+    (401, '1'),  
+    (501, 'y'),  
+    (601, 'yes'),  
+    (701, 'no'),  
+    (801, '0');  
+----------------------------------------------------------------------------------------------------
+
