@@ -1,31 +1,38 @@
 Go to the Official website (https://www.postgresql.org/) of PostgreSQL and click on the Download
----------------------------------------------------------------------------------------------------------To create table
+---------------------------------------------------------------------------------------------------------
+To create table
+----------------------------------
 Create table dept  
 ( dept_no int constraint dept_details_pk primary key , dept_name text NOT NULL,Location varchar(15));  
 ------------------------------------------------------------------------------------------------
 To insert Data
+------------------------------------
 insert into dept values(103,'purchase','Pune');
 -------------------------------------------------------------------------------------------------
 To view the data
+----------------------------------
 select * from department;
 -------------------------------------------------------------------------------------------------
 To update the record
+---------------------------------------
 update employee set location='pune' where emp_no=101;
 ---------------------------------------------------------------------------------------------------
 To add a column
+---------------------------------------
 alter table employee add column phone_no int;
 
 update employee set phone_no=8897 where emp_no=102;
 ----------------------------------------------------------------------------------------------------
 To drop a column
-
+---------------------------------------------
 ALTER TABLE employee DROP COLUMN phone_no;  
 --------------------------------------------------------------------------------------------
 To delete a row
+-----------------------------------
 delete from employee where emp_no=101;
 -------------------------------------------------------------------------------
 To display the data in ascending or descending order
-
+-------------------------------------------------------------------------------------
 SELECT emp_name FROM employee  ORDER BY emp_name ASC;  
 
 SELECT emp_name FROM employee  ORDER BY emp_name desc;  
@@ -85,7 +92,7 @@ ALTER COLUMN Stud_age TYPE VARCHAR,
 ALTER COLUMN Stud_address TYPE VARCHAR;  
 -------------------------------------------------------------------------------
 To rename column
-
+-----------------------------------------------------------------------------
 ALTER TABLE Student_information  
 RENAME stud_name TO student_name; 
 ---------------------------------Primary key and Foreign Key-----------------------
