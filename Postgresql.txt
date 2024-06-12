@@ -47,10 +47,15 @@ CREATE TABLE demo_dist(
 ----------------------------------------------------------------------
 INSERT INTO demo_dist (Summer_fruits, Winter_fruits)  
 VALUES('Mango', 'Grape'),  
-('Watermelon', 'Pears'),('Apples','Apples'),   
-('Mango', NULL),(NULL, 'Mango'), ('Apples','Apples'),  
-('Guava', 'Oranges'),('Pineapple', 'Pineapple'),  
-('Musk Melon', ' Bananas'),('Litchi', 'Cranberries');  
+('Watermelon', 'Pears'),
+('Apples','Apples'),   
+('Mango', NULL),
+(NULL, 'Mango'),
+ ('Apples','Apples'),  
+('Guava', 'Oranges'),
+('Pineapple', 'Pineapple'),  
+('Musk Melon', ' Bananas'),
+('Litchi', 'Cranberries');  
 --------------------------------------------------------------------------------------
 SELECT Serial_No,Summer_fruits, Winter_fruits  
 FROM demo_dist ;  
@@ -146,7 +151,7 @@ CREATE TABLE Items (item_id SERIAL PRIMARY KEY, item_name VARCHAR(100) NOT NULL,
 CREATE TABLE Char_demo (Id serial PRIMARY KEY,A CHAR (1),B CHAR (10));  
 
 INSERT INTO Char_demo (A, B)  VALUES ('J','Java' );  
-----------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
  PostgreSQL, the text data
 ----------------------------------------------------------------
 CREATE TABLE Text_demo (Id serial PRIMARY KEY,A TEXT,B TEXT);  
@@ -183,25 +188,38 @@ VALUES
 ----------------------------------------------------------------------------------------------------
 Group by
 -----------------------------
-create table employee(emp_id int,first_name varchar(30),last_name varchar(30),age int,salary NUMERIC(9,2));
-----------------------------
+create table daimleremployee(emp_id int,first_name varchar(30),last_name varchar(30),age int,salary NUMERIC(9,2));
+------------------------------------------------------------------------------------
+insert into daimleremployee values
+(101,'sandip','kumar',47,50000.50),
+(102,'sunil','kumar',44,40000.50),
+(102,'sunil','kumar',44,41000.50),
+(102,'sunil','kumar',44,40000.50),
+(101,'sandip','kumar',47,52000.50),
+(101,'sandip','kumar',47,55000.50);
+----------------------------------------------------------------------------------
 SELECT first_name, SUM(SALARY)     
-FROM employee  
-where first_name = 'John'  
+FROM daimleremployee  
+where first_name = 'sandip'  
 GROUP BY first_name ;  
 --------------------------------------------------------
 SELECT first_name, SUM(SALARY)     
-FROM employee  
+FROM daimleremployee  
+where first_name = 'sunil'  
+GROUP BY first_name ;  
+--------------------------------------------------------
+SELECT first_name, SUM(SALARY)     
+FROM daimleremployee  
 GROUP BY first_name  
-ORDER BY SUM (salary) asc;  
+ORDER BY SUM (salary) asc; 
 -----------------------------------------------------------
 SELECT first_name,  
 COUNT (emp_id)  
-FROM employee  
-GROUP BY first_name;  
+FROM daimleremployee  
+GROUP BY first_name; 
 -------------------------------------------------------
 SELECT emp_id, first_name, SUM(salary)   
-FROM employee  
+FROM daimleremployee  
 GROUP BY first_name, emp_id  
 ORDER BY emp_id;  
 ------------------------------------------------------------------
@@ -218,3 +236,158 @@ FROM employee
 GROUP BY first_name  
 HAVING COUNT (emp_id)< 2;  
 -----------------------------------------------------------------------
+PostgreSQL Integer data type
+-----------------------------------------------------------------------------
+CREATE TABLE Social_site (  
+    Id SERIAL PRIMARY KEY,  
+    Website_name VARCHAR (255) NOT NULL,  
+    active_users INTEGER NOT NULL CHECK (active_users> 0)  
+);  
+-------------------------------------------------------------------------------------------------------------
+INSERT INTO social_site(Website_name, active_users)  
+VALUES  
+     ('Instagram', 1000),   
+    ('Facebook', 2203),  
+    ('WhatsApp', 2000),  
+    ('Twitter', 3000),   
+     ('Youtube', 2000);  
+----------------------------------------------------------------------------------------------------
+CREATE TABLE countries_citizen (  
+    Id SERIAL PRIMARY KEY,  
+    Country_name VARCHAR (255) NOT NULL,  
+    citizen INTEGER NOT NULL CHECK (citizen> 0)  
+);  
+------------------------------------------------------------------------------------------------------------
+INSERT INTO countries_citizen (Country_name, citizen)  
+VALUES  
+('India', 1380004385),  
+('United States', 331000000),   
+('Indonesia', 252164800),    
+('China', 1366990000),  
+('Brazil',203212000);  
+-------------------------------------------------------------------------------------------------------------------
+PostgreSQL SMALLINT data type
+--------------------------------------------------------
+CREATE TABLE Employee_age(  
+    Empolyee_id SERIAL PRIMARY KEY,  
+    Employee_first_name VARCHAR (255) NOT NULL,  
+    Employee_last_name VARCHAR (255) NOT NULL,  
+   Employee_age SMALLINT NOT NULL CHECK (Employee_age > 0)  
+);  
+-----------------------------------------------------------------------------
+INSERT INTO Employee_age(Employee_first_name, Employee_last_name, Employee_age)  
+VALUES  
+('Michael', 'Smith',22),  
+('Maria', 'John', 25),   
+('James', 'Johnson', 34),    
+('Margaret', 'Clark', 40),  
+('Catherine','Wilson',26);  
+--------------------------------------------------------------------------------------------------------------------------
+CREATE TABLE Book_pages (  
+   B_Id SERIAL PRIMARY KEY,  
+   Book_name VARCHAR (255) NOT NULL,  
+   Pages_in_book SMALLINT NOT NULL CHECK (Pages_in_book > 0)  
+);  
+----------------------------------------------------------------------------------------------
+INSERT INTO Book_pages(Book_name, Pages_in_book)  
+VALUES  
+    ('The Blind Assassin ', 637),  
+    ('the Overstory', 512),   
+    ('Cloud Atlas', 528),    
+    ('The Stand by Stephen King', 1153);
+-------------------------------------------------------------------------------------------
+PostgreSQL BIGINT data type
+-------------------------------------------------------
+CREATE TABLE Fundamental_constants(  
+    Serial_number SERIAL PRIMARY KEY,  
+    Quantity VARCHAR (255) NOT NULL,  
+    Constant_value BIGINT NOT NULL CHECK (Constant_value> 0)  
+);  
+---------------------------------------------------------------------
+INSERT INTO Fundamental_constants(Quantity, Constant_value)  
+VALUES  
+    ('Faraday constant', 96485332890000),  
+        ('Rydberg constant', 10973731568525000),  
+    ('speed of light', 29979245800000000),  
+        ('Bohr_radius', 13000000000);  
+-----------------------------------------------------------------------------------------------
+CREATE TABLE Solar_system(  
+    Serial_number SERIAL PRIMARY KEY,  
+    Galaxy_name VARCHAR (255) NOT NULL,  
+    Number_of_stars BIGINT NOT NULL CHECK (Number_of_stars> 0)  
+);  
+-----------------------------------------------------------------------------------------
+INSERT INTO Solar_system(Galaxy_name, Number_of_stars)  
+VALUES  
+        ('Milky_Way', 50000000000000),  
+        ('IC 1101',100000000000000),  
+    ('Comet', 5700000000000),  
+    ('Bodes', 2700000000000),   
+     ('Cartwheel', 1300000000000);  
+--------------------------------------------------------------------------
+PostgreSQL SERIAL type
+-------------------------------------------------
+CREATE TABLE Cars(  
+   Car_id SERIAL PRIMARY KEY,  
+   Car_name VARCHAR NOT NULL,  
+   Car_model VARCHAR NOT NULL   
+);  
+--------------------------------------------------------------------
+INSERT INTO Cars(Car_name, Car_model)   
+VALUES('Porche','911 Carrera'); 
+------------------------------------------------------------------------------
+INSERT INTO Cars(Car_id, Car_name, Car_model)   
+VALUES(DEFAULT,'Audi','A8');  
+---------------------------------------------------------------------------------------
+CREATE TABLE Vegetables(  
+     Veggie_id SERIAL PRIMARY KEY,  
+    Veggie_name VARCHAR NOT NULL,  
+Veggie_seasons VARCHAR NOT NULL  
+);  
+--------------------------------------------------------------------------------------------------
+INSERT INTO Vegetables(Veggie_name,Veggie_seasons)   
+VALUES('Broccoli','Spring');  
+----------------------------------------------------------------------------------------------
+INSERT INTO Vegetables (Veggie_id,Veggie_seasons, Veggie_seasons)   
+VALUES(DEFAULT, 'Sweet Potatoes','Winter');  
+--------------------------------------------------------------------------------------------------------------
+INSERT INTO Vegetables(Veggie_name,Veggie_seasons)   
+VALUES('Jalapeno Peppers','Fall'),  
+('Cucumbers','Summer'),  
+('Winter Squash','Winter'),  
+('Snow Peas','Spring'),  
+('Black Radish','All seasons'),  
+('Pumpkin','Fall');  
+--------------------------------------------------------------------------------------------------
+PostgreSQL Date Data Type
+-----------------------------------------------------------------------
+CREATE TABLE Records (  
+Records_id serial PRIMARY KEY,  
+Heading VARCHAR NOT NULL,  
+Submission _date DATE NOT NULL DEFAULT CURRENT_DATE  
+);  
+-----------------------------------------------------------------------------------------------------------
+INSERT INTO Records (Heading)  
+VALUES  
+('Invoice to Client ABC'),  
+('Invoice to Client PQR'),  
+('Invoice to client XYZ');  
+-----------------------------------------------------------------------------------------
+CREATE TABLE Student_details (  
+    Student_Id serial PRIMARY KEY,  
+    Stu_first_name VARCHAR,  
+    Stu_last_name VARCHAR ,  
+    Date_of_birth DATE NOT NULL,  
+    Admission_date DATE NOT NULL  
+);  
+--------------------------------------------------------------------------------
+INSERT INTO Student_details(Stu_first_name, Stu_last_name,  
+Date_of_birth, Admission_date)  
+VALUES   
+('Mike','Smith','1994-10-22','2018-08-11'),  
+('William','Davis','1990-08-12','2018-08-10'),  
+('Susan','Brown','1991-02-28','2018-07-10'),  
+('Hannah','Beker','1995-12-13','2018-08-11'),  
+('Margaret','Wilson','1994-04-25','2018-07-12');
+-------------------------------------------------------------------------------------------------------
+  
