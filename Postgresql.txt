@@ -30,8 +30,37 @@ SELECT emp_name FROM employee  ORDER BY emp_name ASC;
 
 SELECT emp_name FROM employee  ORDER BY emp_name desc;  
 ------------------------------------------------------------------------------------------------
-Create a table
+To Truncate Table
+------------------------------------
+TRUNCATE TABLE employee;
+RESTART IDENTITY;  
 
+*Reset the values in the particular column with the help of the RESTART IDENTITY option.
+------------------------------------------------------------------------------------
+PostgreSQL SELECT DISTINCT
+--------------------------------------------------------------------------------
+CREATE TABLE demo_dist(  
+    Serial_No serial NOT NULL PRIMARY KEY,  
+    Summer_fruits VARCHAR,  
+    Winter_fruits VARCHAR     
+);  
+----------------------------------------------------------------------
+INSERT INTO demo_dist (Summer_fruits, Winter_fruits)  
+VALUES('Mango', 'Grape'),  
+('Watermelon', 'Pears'),('Apples','Apples'),   
+('Mango', NULL),(NULL, 'Mango'), ('Apples','Apples'),  
+('Guava', 'Oranges'),('Pineapple', 'Pineapple'),  
+('Musk Melon', ' Bananas'),('Litchi', 'Cranberries');  
+--------------------------------------------------------------------------------------
+SELECT Serial_No,Summer_fruits, Winter_fruits  
+FROM demo_dist ;  
+-------------------------------------------------------------------------------------
+SELECT DISTINCT Summer_fruits  
+FROM demo_dist   
+ORDER BY Summer_fruits ;  
+----------------------------------------------------------------------------------
+Create a table
+----------------------------------------------------------------------------------------
 CREATE TABLE Student_information(  
 Stud_id serial PRIMARY KEY,  
 Stud_name TEXT NOT NULL,Stud_age int,Stud_address char(30));  
@@ -152,4 +181,40 @@ VALUES
     (701, 'no'),  
     (801, '0');  
 ----------------------------------------------------------------------------------------------------
-
+Group by
+-----------------------------
+create table employee(emp_id int,first_name varchar(30),last_name varchar(30),age int,salary NUMERIC(9,2));
+----------------------------
+SELECT first_name, SUM(SALARY)     
+FROM employee  
+where first_name = 'John'  
+GROUP BY first_name ;  
+--------------------------------------------------------
+SELECT first_name, SUM(SALARY)     
+FROM employee  
+GROUP BY first_name  
+ORDER BY SUM (salary) asc;  
+-----------------------------------------------------------
+SELECT first_name,  
+COUNT (emp_id)  
+FROM employee  
+GROUP BY first_name;  
+-------------------------------------------------------
+SELECT emp_id, first_name, SUM(salary)   
+FROM employee  
+GROUP BY first_name, emp_id  
+ORDER BY emp_id;  
+------------------------------------------------------------------
+Having clause
+------------------------
+SELECT emp_id, first_name, SUM (salary)  
+FROM employee  
+GROUP BY first_name, emp_id  
+HAVING SUM (salary) > 25000  
+order by first_name DESC;  
+----------------------------------------------------------------
+SELECT first_name, COUNT (emp_id)  
+FROM employee  
+GROUP BY first_name  
+HAVING COUNT (emp_id)< 2;  
+-----------------------------------------------------------------------
