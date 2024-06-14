@@ -1,7 +1,7 @@
 Go to the Official website (https://www.postgresql.org/) of PostgreSQL and click on the Download
 ---------------------------------------------------------------------------------------------------------
 To create table
-----------------------------------
+---------------------------------------------------------------------------------------------------------
 Create table dept  
 ( dept_no int constraint dept_details_pk primary key , dept_name text NOT NULL,Location varchar(15));  
 ------------------------------------------------------------------------------------------------
@@ -38,27 +38,27 @@ SELECT emp_name FROM employee  ORDER BY emp_name ASC;
 SELECT emp_name FROM employee  ORDER BY emp_name desc;  
 ------------------------------------------------------------------------------------------------
 To Truncate Table
-------------------------------------
+--------------------------------------------------------------------
 TRUNCATE TABLE employee;
 RESTART IDENTITY;  
 
 *Reset the values in the particular column with the help of the RESTART IDENTITY option.
 ------------------------------------------------------------------------------------
 PostgreSQL SELECT DISTINCT
---------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
 CREATE TABLE demo_dist(  
     Serial_No serial NOT NULL PRIMARY KEY,  
     Summer_fruits VARCHAR,  
     Winter_fruits VARCHAR     
 );  
-----------------------------------------------------------------------
+------------------------------------------------------------------------------------
 INSERT INTO demo_dist (Summer_fruits, Winter_fruits)  
 VALUES('Mango', 'Grape'),  
 ('Watermelon', 'Pears'),
 ('Apples','Apples'),   
 ('Mango', NULL),
 (NULL, 'Mango'),
- ('Apples','Apples'),  
+('Apples','Apples'),  
 ('Guava', 'Oranges'),
 ('Pineapple', 'Pineapple'),  
 ('Musk Melon', ' Bananas'),
@@ -70,7 +70,7 @@ FROM demo_dist ;
 SELECT DISTINCT Summer_fruits  
 FROM demo_dist   
 ORDER BY Summer_fruits ;  
-----------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
 Create a table
 ----------------------------------------------------------------------------------------
 CREATE TABLE Student_information(  
@@ -79,11 +79,11 @@ Stud_name TEXT NOT NULL,Stud_age int,Stud_address char(30));
 ----------------------------------------------------------------------------------------
 Inserting 3 rows at a time
 ----------------------------------------------------------------------
-INSERT INTO Student_information (  
-Stud_name, Stud_age,Stud_address)  
-VALUES('Mike','26','New york' ),  
- ('Emily','23','Boston'),  
- ('john','25','Chicago');  
+INSERT INTO Student_information ( Stud_name, Stud_age,Stud_address)  
+VALUES
+('Mohn','26','New york'),  
+('Sunil','23','Boston'),  
+('john','25','Chicago');  
 -------------------------------------------------------------------------------------------------
 select * from student_information;
 ---------------------------------------------------------------------
@@ -131,7 +131,7 @@ create table items (item_id int, item_name varchar,  item_price Numeric(9,2))
 insert into items values(101,'TV',25000.00)
 
 SELECT * FROM get_Item_details(101);  
---------------------------------------Datatypes---------------------------
+--------------------------------------Datatypes-------------------------------------------------
 smallint---stores whole numbers, small range.---2 bytes
 integer---stores whole numbers.---	4 bytes
 bigint---stores whole numbers, large range.---8 bytes
@@ -169,7 +169,7 @@ INSERT INTO Text_demo2 (A, B)
 VALUES   
 ('Javatpoint', 'The Best Portal to Learn Technologies'),   
 ('Latest tutorial', 'Trending technologies');  
--------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
 PostgreSQL Varchar data type
 --------------------------------------------------
 CREATE TABLE Varchar_demo ( Id serial PRIMARY KEY, P VARCHAR(1), Q VARCHAR(50));  
@@ -397,7 +397,29 @@ VALUES
 ('Hannah','Beker','1995-12-13','2018-08-11'),  
 ('Margaret','Wilson','1994-04-25','2018-07-12');
 -------------------------------------------------------------------------------------------------------
-  SELECT Student_id, Stu_first_name,  
+SELECT Student_id, Stu_first_name,  
 Stu_last_name, AGE(Date_of_birth)  
 FROM Student_details;  
 ----------------------------------------------------------------------------------------------
+Java Database connectivity with PostgressSQL
+------------------------------------------------------------------
+program-1
+--------------------
+import java.sql.*;
+public class PostgreSQLJDBC 
+{
+   public static void main(String args[]) 
+   {
+            try {
+         Class.forName("org.postgresql.Driver");
+         Connection c = DriverManager
+            .getConnection("jdbc:postgresql://localhost:5432/postgres","postgres", "1234");
+      } catch (Exception e) {
+         e.printStackTrace();
+         System.err.println(e.getClass().getName()+": "+e.getMessage());
+         System.exit(0);
+      }
+      System.out.println("Opened database successfully");
+   }
+}
+-------------------------------------------------------------------------------------------------------------
