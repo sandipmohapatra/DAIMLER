@@ -437,11 +437,11 @@ public class PostgreSQLJDBC2
 
          stmt = c.createStatement();
          String sql = "CREATE TABLE COMPANY " +
-            "(ID INT PRIMARY KEY     NOT NULL," +
-            " NAME           TEXT    NOT NULL, " +
-            " AGE            INT     NOT NULL, " +
-            " ADDRESS        CHAR(50), " +
-            " SALARY         REAL)";
+            "(ID INT PRIMARY KEY NOT NULL," +
+            " NAME  TEXT  NOT NULL, " +
+            " AGE  INT  NOT NULL, " +
+            " ADDRESS CHAR(50), " +
+            " SALARY REAL)";
          stmt.executeUpdate(sql);
          stmt.close();
          c.close();
@@ -623,7 +623,7 @@ public class PostgreSQLJDBC6 {
 }
 -------------------------------------------------------------------------------------------------
 create a Function-1
-----------------------
+-----------------------------------------------
 CREATE OR REPLACE FUNCTION totalRecords ()
 RETURNS integer AS $total$
 declare
@@ -719,11 +719,11 @@ print ("Opened database successfully")
 
 cur = conn.cursor()
 cur.execute('''CREATE TABLE COMPANY1
-      (ID INT PRIMARY KEY     NOT NULL,
-      NAME          TEXT    NOT NULL,
-      AGE                INT     NOT NULL,
-      ADDRESS      CHAR(50),
-      SALARY         REAL);''')
+      (ID INT PRIMARY KEY NOT NULL,
+      NAME  TEXT    NOT NULL,
+      AGE  INT  NOT NULL,
+      ADDRESS  CHAR(50),
+      SALARY REAL);''')
 print ("Table created successfully")
 
 conn.commit()
