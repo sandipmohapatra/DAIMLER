@@ -406,7 +406,7 @@ Java Database connectivity with PostgressSQL
 program-1
 --------------------
 import java.sql.*;
-public class PostgreSQLJDBC 
+public class PostgreSQLJDBC1 
 {
    public static void main(String args[]) 
    {
@@ -416,10 +416,83 @@ public class PostgreSQLJDBC
             .getConnection("jdbc:postgresql://localhost:5432/postgres","postgres", "1234");
       } catch (Exception e) {
          e.printStackTrace();
-         System.err.println(e.getClass().getName()+": "+e.getMessage());
-         System.exit(0);
-      }
+              }
       System.out.println("Opened database successfully");
    }
 }
 -------------------------------------------------------------------------------------------------------------
+Program-2
+----------------------
+import java.sql.*;
+public class PostgreSQLJDBC2
+ {
+   public static void main( String args[] ) {
+      Connection c = null;
+      Statement stmt = null;
+      try {
+         Class.forName("org.postgresql.Driver");
+         c = DriverManager
+            .getConnection("jdbc:postgresql://localhost:5432/postgres","postgres","1234");
+         System.out.println("Opened database successfully");
+
+         stmt = c.createStatement();
+         String sql = "CREATE TABLE COMPANY " +
+            "(ID INT PRIMARY KEY     NOT NULL," +
+            " NAME           TEXT    NOT NULL, " +
+            " AGE            INT     NOT NULL, " +
+            " ADDRESS        CHAR(50), " +
+            " SALARY         REAL)";
+         stmt.executeUpdate(sql);
+         stmt.close();
+         c.close();
+      } catch ( Exception e ) 
+	{
+         e.printStackTrace();
+      }
+      System.out.println("Table created successfully");
+   }
+}
+-------------------------------------------------------------------------------------------------------
+Program-3
+---------------------
+import java.sql.*;
+
+public class PostgreSQLJDBC3 
+{
+   public static void main(String args[]) {
+      Connection c = null;
+      Statement stmt = null;
+      try {
+         Class.forName("org.postgresql.Driver");
+         c = DriverManager
+            .getConnection("jdbc:postgresql://localhost:5432/postgres","postgres","1234");
+         c.setAutoCommit(false);
+         System.out.println("Opened database successfully");
+
+         stmt = c.createStatement();
+         String sql = "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) "
+            + "VALUES (1, 'Paul', 32, 'California', 20000.00 );";
+         stmt.executeUpdate(sql);
+
+         sql = "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) "
+            + "VALUES (2, 'Allen', 25, 'Texas', 15000.00 );";
+         stmt.executeUpdate(sql);
+
+         sql = "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) "
+            + "VALUES (3, 'Teddy', 23, 'Norway', 20000.00 );";
+         stmt.executeUpdate(sql);
+
+         sql = "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) "
+            + "VALUES (4, 'Mark', 25, 'Rich-Mond ', 65000.00 );";
+         stmt.executeUpdate(sql);
+
+         stmt.close();
+         c.commit();
+         c.close();
+      } catch (Exception e) {
+         e.printStackTrace();
+      }
+      System.out.println("Records created successfully");
+   }
+}
+------------------------------------------------------------------------------------------------
