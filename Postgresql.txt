@@ -696,7 +696,7 @@ $total$ LANGUAGE plpgsql;
 select totalRecords();
 -------------------------------------------------------------
 Python
----------------
+-----------------------------------------------------------------
 installing the jar file
 ------------------------------------------------------------------
 step-1
@@ -774,3 +774,51 @@ for row in rows:
 print ("Operation done successfully")
 conn.close()
 ------------------------------------------------------------------------
+program-5
+---------------------
+import psycopg2
+
+conn = psycopg2.connect(database = "postgres", user = "postgres", password = "1234", host = "127.0.0.1", port = "5432")
+print ("Opened database successfully")
+
+cur = conn.cursor()
+
+cur.execute("UPDATE COMPANY set SALARY1 = 25000.00 where ID = 1")
+conn.commit()
+print ("Total number of rows updated :", cur.rowcount)
+
+cur.execute("SELECT id, name, address, salary  from COMPANY1")
+rows = cur.fetchall()
+for row in rows:
+   print ("ID = ", row[0])
+   print ("NAME = ", row[1])
+   print ("ADDRESS = ", row[2])
+   print ("SALARY = ", row[3], "\n")
+
+print ("Operation done successfully")
+conn.close()
+-------------------------------------------------------------
+program-6
+-------------------------------
+import psycopg2
+
+conn = psycopg2.connect(database = "postgres", user = "postgres", password = "1234", host = "127.0.0.1", port = "5432")
+print ("Opened database successfully")
+
+cur = conn.cursor()
+
+cur.execute("DELETE from COMPANY1 where ID=2;")
+conn.commit()
+print ("Total number of rows deleted :", cur.rowcount)
+
+cur.execute("SELECT id, name, address, salary  from COMPANY1")
+rows = cur.fetchall()
+for row in rows:
+   print ("ID = ", row[0])
+   print ("NAME = ", row[1])
+   print ("ADDRESS = ", row[2])
+   print ("SALARY = ", row[3], "\n")
+
+print ("Operation done successfully")
+conn.close()
+----------------------------------------------------------------------------------
