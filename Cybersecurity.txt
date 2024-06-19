@@ -1,0 +1,151 @@
+Cybersecurity
+Cybersecurity is the protection of Internet-connected systems, including hardware, software, and data from cyber attackers. It is primarily about people, processes, and technologies working together to encompass the full range of threat reduction, vulnerability reduction, deterrence, international engagement, and recovery policies and activities, including computer network operations, information assurance, law enforcement, etc.
+
+It is the body of technologies, processes, and practices designed to protect networks, devices, programs, and data from attack, theft, damage, modification, or unauthorized access. Therefore, it may also be referred to as information technology security.
+
+Cyber-attack is now an international concern. It has given many concerns that could endanger the global economy. As the volume of cyber-attacks grows, companies and organizations, especially those that deal with information related to national security, health, or financial records, need to take steps to protect their sensitive business and personal information.
+
+This Cyber Security tutorial provides basic and advanced concepts of Cyber Security technology. It will cover the most popular concept of Cyber Security, such as what is Cyber Security, Cyber Security goals, types of cyber-attacks, types of cyber attackers, policies, digital signature, Cyber Security tools, security risk analysis, challenges, etc.
+
+What is Cyber Security?
+The technique of protecting internet-connected systems such as computers, servers, mobile devices, electronic systems, networks, and data from malicious attacks is known as cybersecurity. We can divide cybersecurity into two parts one is cyber, and the other is security. Cyber refers to the technology that includes systems, networks, programs, and data. And security is concerned with the protection of systems, networks, applications, and information. In some cases, it is also called electronic information security or information technology security.
+
+Some other definitions of cybersecurity are:
+
+"Cyber Security is the body of technologies, processes, and practices designed to protect networks, devices, programs, and data from attack, theft, damage, modification or unauthorized access."
+
+"Cyber Security is the set of principles and practices designed to protect our computing resources and online information against threats."
+ ---------------------------------------------------------------------------------------------------------------------
+Types of Cyber Security
+Every organization's assets are the combinations of a variety of different systems. These systems have a strong cybersecurity posture that requires coordinated efforts across all of its systems. Therefore, we can categorize cybersecurity in the following sub-domains:
+
+Network Security: It involves implementing the hardware and software to secure a computer network from unauthorized access, intruders, attacks, disruption, and misuse. This security helps an organization to protect its assets against external and internal threats.
+
+Application Security: It involves protecting the software and devices from unwanted threats. This protection can be done by constantly updating the apps to ensure they are secure from attacks. Successful security begins in the design stage, writing source code, validation, threat modeling, etc., before a program or device is deployed.
+
+Information or Data Security: It involves implementing a strong data storage mechanism to maintain the integrity and privacy of data, both in storage and in transit.
+
+Identity management: It deals with the procedure for determining the level of access that each individual has within an organization.
+
+Operational Security: It involves processing and making decisions on handling and securing data assets.
+
+Mobile Security: It involves securing the organizational and personal data stored on mobile devices such as cell phones, computers, tablets, and other similar devices against various malicious threats. These threats are unauthorized access, device loss or theft, malware, etc.
+
+Cloud Security: It involves in protecting the information stored in the digital environment or cloud architectures for the organization. It uses various cloud service providers such as AWS, Azure, Google, etc., to ensure security against multiple threats.
+
+Disaster Recovery and Business Continuity Planning: It deals with the processes, monitoring, alerts, and plans to how an organization responds when any malicious activity is causing the loss of operations or data. Its policies dictate resuming the lost operations after any disaster happens to the same operating capacity as before the event.
+
+User Education: It deals with the processes, monitoring, alerts, and plans to how an organization responds when any malicious activity is causing the loss of operations or data. Its policies dictate resuming the lost operations after any disaster happens to the same operating capacity as before the event.
+----------------------------------------------------------------------------------------------------------------------
+Importance of Cyber Security
+Today we live in a digital era where all aspects of our lives depend on the network, computer and other electronic devices, and software applications. All critical infrastructure such as the banking system, healthcare, financial institutions, governments, and manufacturing industries use devices connected to the Internet as a core part of their operations. Some of their information, such as intellectual property, financial data, and personal data, can be sensitive for unauthorized access or exposure that could have negative consequences. This information gives intruders and threat actors to infiltrate them for financial gain, extortion, political or social motives, or just vandalism.
+
+Cyber-attack is now an international concern that hacks the system, and other security attacks could endanger the global economy. Therefore, it is essential to have an excellent cybersecurity strategy to protect sensitive information from high-profile security breaches. Furthermore, as the volume of cyber-attacks grows, companies and organizations, especially those that deal with information related to national security, health, or financial records, need to use strong cybersecurity measures and processes to protect their sensitive business and personal information.
+-------------------------------------------------------------------------------------------
+Cyber Security Goals
+Cyber Security's main objective is to ensure data protection. The security community provides a triangle of three related principles to protect the data from cyber-attacks. This principle is called the CIA triad. The CIA model is designed to guide policies for an organization's information security infrastructure. When any security breaches are found, one or more of these principles has been violated.
+
+We can break the CIA model into three parts: Confidentiality, Integrity, and Availability. It is actually a security model that helps people to think about various parts of IT security. Let us discuss each part in detail.
+
+What is Cyber Security
+Confidentiality
+
+Confidentiality is equivalent to privacy that avoids unauthorized access of information. It involves ensuring the data is accessible by those who are allowed to use it and blocking access to others. It prevents essential information from reaching the wrong people. Data encryption is an excellent example of ensuring confidentiality.
+
+Integrity
+
+This principle ensures that the data is authentic, accurate, and safeguarded from unauthorized modification by threat actors or accidental user modification. If any modifications occur, certain measures should be taken to protect the sensitive data from corruption or loss and speedily recover from such an event. In addition, it indicates to make the source of information genuine.
+
+Availability
+
+This principle makes the information to be available and useful for its authorized people always. It ensures that these accesses are not hindered by system malfunction or cyber-attacks.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Types of Cyber Security Threats
+A threat in cybersecurity is a malicious activity by an individual or organization to corrupt or steal data, gain access to a network, or disrupts digital life in general. The cyber community defines the following threats available today:
+
+What is Cyber Security
+Malware
+Malware means malicious software, which is the most common cyber attacking tool. It is used by the cybercriminal or hacker to disrupt or damage a legitimate user's system. The following are the important types of malware created by the hacker:
+
+Virus: It is a malicious piece of code that spreads from one device to another. It can clean files and spreads throughout a computer system, infecting files, stoles information, or damage device.
+Spyware: It is a software that secretly records information about user activities on their system. For example, spyware could capture credit card details that can be used by the cybercriminals for unauthorized shopping, money withdrawing, etc.
+Trojans: It is a type of malware or code that appears as legitimate software or file to fool us into downloading and running. Its primary purpose is to corrupt or steal data from our device or do other harmful activities on our network.
+Ransomware: It's a piece of software that encrypts a user's files and data on a device, rendering them unusable or erasing. Then, a monetary ransom is demanded by malicious actors for decryption.
+Worms: It is a piece of software that spreads copies of itself from device to device without human interaction. It does not require them to attach themselves to any program to steal or damage the data.
+Adware: It is an advertising software used to spread malware and displays advertisements on our device. It is an unwanted program that is installed without the user's permission. The main objective of this program is to generate revenue for its developer by showing the ads on their browser.
+
+Botnets: It is a collection of internet-connected malware-infected devices that allow cybercriminals to control them. It enables cybercriminals to get credentials leaks, unauthorized access, and data theft without the user's permission.
+
+Phishing
+Phishing is a type of cybercrime in which a sender seems to come from a genuine organization like PayPal, eBay, financial institutions, or friends and co-workers. They contact a target or targets via email, phone, or text message with a link to persuade them to click on that links. This link will redirect them to fraudulent websites to provide sensitive data such as personal information, banking and credit card information, social security numbers, usernames, and passwords. Clicking on the link will also install malware on the target devices that allow hackers to control devices remotely.
+
+Man-in-the-middle (MITM) attack
+A man-in-the-middle attack is a type of cyber threat (a form of eavesdropping attack) in which a cybercriminal intercepts a conversation or data transfer between two individuals. Once the cybercriminal places themselves in the middle of a two-party communication, they seem like genuine participants and can get sensitive information and return different responses. The main objective of this type of attack is to gain access to our business or customer data. For example, a cybercriminal could intercept data passing between the target device and the network on an unprotected Wi-Fi network.
+
+Distributed denial of service (DDoS)
+It is a type of cyber threat or malicious attempt where cybercriminals disrupt targeted servers, services, or network's regular traffic by fulfilling legitimate requests to the target or its surrounding infrastructure with Internet traffic. Here the requests come from several IP addresses that can make the system unusable, overload their servers, slowing down significantly or temporarily taking them offline, or preventing an organization from carrying out its vital functions.
+
+Brute Force
+A brute force attack is a cryptographic hack that uses a trial-and-error method to guess all possible combinations until the correct information is discovered. Cybercriminals usually use this attack to obtain personal information about targeted passwords, login info, encryption keys, and Personal Identification Numbers (PINS).
+
+SQL Injection (SQLI)
+SQL injection is a common attack that occurs when cybercriminals use malicious SQL scripts for backend database manipulation to access sensitive information. Once the attack is successful, the malicious actor can view, change, or delete sensitive company data, user lists, or private customer details stored in the SQL database.
+
+Domain Name System (DNS) attack
+
+A DNS attack is a type of cyberattack in which cyber criminals take advantage of flaws in the Domain Name System to redirect site users to malicious websites (DNS hijacking) and steal data from affected computers. It is a severe cybersecurity risk because the DNS system is an essential element of the internet infrastructure.
+
+Latest Cyber Threats
+The following are the latest cyber threats reported by the U.K., U.S., and Australian governments:
+
+Romance Scams
+The U.S. government found this cyber threat in February 2020. Cybercriminals used this threat through dating sites, chat rooms, and apps. They attack people who are seeking a new partner and duping them into giving away personal data.
+
+Dridex Malware
+It is a type of financial Trojan malware identifies by the U.S. in December 2019 that affects the public, government, infrastructure, and business worldwide. It infects computers through phishing emails or existing malware to steal sensitive information such as passwords, banking details, and personal data for fraudulent transactions. The National Cyber Security Centre of the United Kingdom encourages people to make sure their devices are patched, anti-virus is turned on and up to date, and files are backed up to protect sensitive data against this attack.
+
+Emotet Malware
+Emotet is a type of cyber-attack that steals sensitive data and also installs other malware on our device. The Australian Cyber Security Centre warned national organizations about this global cyber threat in 2019.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+The following are the system that can be affected by security breaches and attacks:
+
+Communication: Cyber attackers can use phone calls, emails, text messages, and messaging apps for cyberattacks.
+Finance: This system deals with the risk of financial information like bank and credit card detail. This information is naturally a primary target for cyber attackers.
+Governments: The cybercriminal generally targets the government institutions to get confidential public data or private citizen information.
+Transportation: In this system, cybercriminals generally target connected cars, traffic control systems, and smart road infrastructure.
+Healthcare: A cybercriminal targets the healthcare system to get the information stored at a local clinic to critical care systems at a national hospital.
+Education: A cybercriminals target educational institutions to get their confidential research data and information of students and employees.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Benefits of Cyber Security
+The following are the benefits of implementing and maintaining cybersecurity:
+
+Cyberattacks and data breach protection for businesses.
+Data and network security are both protected.
+Unauthorized user access is avoided.
+After a breach, there is a faster recovery time.
+End-user and endpoint device protection.
+Regulatory adherence.
+Continuity of operations.
+Developers, partners, consumers, stakeholders, and workers have more faith in the company's reputation and trust.
+
+Cyber Safety Tips
+Let us see how to protect ourselves when any cyberattacks happen. The following are the popular cyber safety tips:
+
+Conduct cybersecurity training and awareness: Every organization must train their staffs on cybersecurity, company policies, and incident reporting for a strong cybersecurity policy to be successful. If the staff does unintentional or intentional malicious activities, it may fail the best technical safeguards that result in an expensive security breach. Therefore, it is useful to conduct security training and awareness for staff through seminars, classes, and online courses that reduce security violations.
+
+Update software and operating system: The most popular safety measure is to update the software and O.S. to get the benefit of the latest security patches.
+
+Use anti-virus software: It is also useful to use the anti-virus software that will detect and removes unwanted threats from your device. This software is always updated to get the best level of protection.
+
+Perform periodic security reviews: Every organization ensures periodic security inspections of all software and networks to identify security risks early in a secure environment. Some popular examples of security reviews are application and network penetration testing, source code reviews, architecture design reviews, and red team assessments. In addition, organizations should prioritize and mitigate security vulnerabilities as quickly as possible after they are discovered.
+
+Use strong passwords: It is recommended to always use long and various combinations of characters and symbols in the password. It makes the passwords are not easily guessable.
+
+Do not open email attachments from unknown senders: The cyber expert always advises not to open or click the email attachment getting from unverified senders or unfamiliar websites because it could be infected with malware.
+
+Avoid using unsecured Wi-Fi networks in public places: It should also be advised not to use insecure networks because they can leave you vulnerable to man-in-the-middle attacks.
+
+Backup data: Every organization must periodically take backup of their data to ensure all sensitive data is not lost or recovered after a security breach. In addition, backups can help maintain data integrity in cyber-attack such as SQL injections, phishing, and ransomware.
+---------------------------------------------------------------------------------------------------------------------------------------
