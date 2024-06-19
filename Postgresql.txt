@@ -130,7 +130,7 @@ create table items (item_id int, item_name varchar,  item_price Numeric(9,2))
 
 insert into items values(101,'TV',25000.00)
 
-SELECT * FROM get_Item_details(101);  
+SELECT * FROM get_Item_detail(101);  
 --------------------------------------Datatypes-------------------------------------------------
 smallint---stores whole numbers, small range.---2 bytes
 integer---stores whole numbers.---	4 bytes
@@ -401,6 +401,47 @@ SELECT Student_id, Stu_first_name,
 Stu_last_name, AGE(Date_of_birth)  
 FROM Student_details;  
 ----------------------------------------------------------------------------------------------
+Limit
+-----------------
+Create table CAR  
+(  
+    Car_id serial not null primary Key,  
+    Car_name VARCHAR(50),   
+    Car_Model VARCHAR(50),  
+    Car_Price INTEGER,  
+    Car_Color VARCHAR(20),  
+    BODY_Style VARCHAR(30)  
+);  
+---------------------------------------------------------------------------------
+Insert into CAR   
+values (1001,'Acura', 'NSX', 47075, 'yellow','coupe'),  
+(1002,'Porche','911 Carrera', 399999, 'silver','coupe'),  
+(1003,'Nissan', 'Armada', 36777, 'blue','wagon'),  
+(1004,'Audi', 'A8', 63890,'black','sedan' ),  
+(1005, 'Volvo', 'XC90', 45845, 'gray','wagon'),  
+(1006,'BMW', 'M-Series', 108900,'red','coupe'),  
+(1007, 'Jaguar', 'XK', 91675, 'brown','convertible'),  
+(1008, 'Hummer', 'H1', 119999,'red','sedan'),  
+(1009, 'Mercedes-Benz','CLS Class', 86900, 'black', 'sedan'),  
+(1010, 'Suzuki', 'XL-7', 25880,'brown','wagon');  
+------------------------------------------------------------------------------------------------
+SELECT Car_id, Car_name, Body_Style  
+FROM CAR  
+ORDER BY Car_id  
+LIMIT 6;  
+--------------------------------------------------------------------------------------------
+SELECT Car_id, Car_name, Car_Price  
+FROM CAR  
+ORDER BY Car_Price desc  
+LIMIT 5 ;  
+--------------------------------------------------------------------------------
+SELECT Car_id, Car_name, Body_Style  
+FROM CAR  
+ORDER BY Car_id  
+LIMIT 5 OFFSET 2;  
+
+*Starting from 2nd Record
+-----------------------------------------------------------------------------------------
 Java Database connectivity with PostgreSQL
 ------------------------------------------------------------------
 program-1
@@ -822,3 +863,322 @@ for row in rows:
 print ("Operation done successfully")
 conn.close()
 ----------------------------------------------------------------------------------
+spring boot + postgres
+--------------------------------------------------------------
+server.port=9088
+
+spring.application.name=COURSE-SERVICE
+eureka.client.service-url.default-zone=http://localhost:8761/eureka
+eureka.instance.instance-id=${spring.application.name}:${random.value}
+
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
+spring.datasource.username=postgres
+spring.datasource.password=1234
+
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+----------------------------------------------------------------------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.6.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>in.sandip</groupId>
+	<artifactId>CourseService</artifactId>
+	<version>1.0</version>
+	<name>CourseService</name>
+	<description>Demo project for Spring Boot</description>
+
+	<properties>
+		<java.version>17</java.version>
+		<spring-cloud.version>Hoxton.SR9</spring-cloud.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+				<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
+----------------------------------------------------------------
+package com.example.demo;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Course 
+{
+@Id
+@GeneratedValue
+private Integer cid;
+private String cname;
+public Course(Integer cid, String cname, Double cfee, String ctype, Double discount, Double gst) {
+	super();
+	this.cid = cid;
+	this.cname = cname;
+	this.cfee = cfee;
+	this.ctype = ctype;
+	this.discount = discount;
+	this.gst = gst;
+}
+public String getCname() {
+	return cname;
+}
+public void setCname(String cname) {
+	this.cname = cname;
+}
+private Double cfee;
+private String ctype;
+private Double discount;
+private Double gst;
+public Integer getCid() {
+	return cid;
+}
+public void setCid(Integer cid) {
+	this.cid = cid;
+}
+public Double getCfee() {
+	return cfee;
+}
+public void setCfee(Double cfee) {
+	this.cfee = cfee;
+}
+public String getCtype() {
+	return ctype;
+}
+public void setCtype(String ctype) {
+	this.ctype = ctype;
+}
+public Double getDiscount() {
+	return discount;
+}
+public void setDiscount(Double discount) {
+	this.discount = discount;
+}
+public Double getGst() {
+	return gst;
+}
+public void setGst(Double gst) {
+	this.gst = gst;
+}
+@Override
+public String toString() {
+	return "Course [cid=" + cid + ", cname=" + cname + ", cfee=" + cfee + ", ctype=" + ctype + ", discount=" + discount
+			+ ", gst=" + gst + "]";
+}
+
+public Course() {
+	super();
+}
+
+
+}
+------------------------------------------------------------------------------------------------------------------
+package com.example.demo;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface CourseRepository extends CrudRepository<Course,Integer>
+{
+}
+----------------------------------------------------------------------------------
+package com.example.demo;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/course")
+public class CourseRestController 
+{
+	@Autowired
+	private ICourseService service;
+	
+	//1. to save the data
+	@PostMapping
+	public ResponseEntity<String> saveCourse(@RequestBody Course c)
+	{
+		Integer id=service.saveCourse(c);
+		ResponseEntity<String> resp=new ResponseEntity("Course"+id+" Created",HttpStatus.CREATED);
+		return resp;
+	}
+//2. to view the data	
+@GetMapping("/all")
+public List<Course> getAllCourse()
+{
+	List<Course> allCourse=service.getAllCourse();
+	return allCourse;
+	}
+
+//3. Fetch course by id.
+@GetMapping("/{id}")
+public ResponseEntity<?> getCourseId(@PathVariable Integer id)
+{
+	Course course=service.getOneCourse(id);
+	ResponseEntity<?> resp=null;
+	try
+	{
+	 resp=ResponseEntity.ok(course);
+	}
+	catch(Exception ae)
+	{
+	 resp=new ResponseEntity<String>("Unable to fetch Data",HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+		return resp;
+	
+}
+
+}
+/* Postman
+{
+"cid": 105,
+"cname": "priya",
+"cfee": 5000.0,
+"ctype": "advance java",
+"discount": 200.0,
+"gst": 300.0
+}
+*/
+--------------------------------------------------------------------------------
+package com.example.demo;
+
+import java.util.*;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class CourseServiceImpl implements ICourseService 
+{
+@Autowired
+private CourseRepository repo;
+
+Course x=null;
+
+	@Override
+	public Integer saveCourse(Course c) {
+		c=repo.save(c);
+		return c.getCid();
+	}
+
+	@Override
+	public List<Course> getAllCourse() {
+		List x=(List) repo.findAll();
+		return x;
+	}
+
+	@Override
+	public Course getOneCourse(Integer id) {
+	Optional<Course> opt=repo.findById(id);
+		return opt.get();
+	}
+
+}
+--------------------------------------------------------------------------------------------
+package com.example.demo;
+
+import java.util.List;
+
+public interface ICourseService 
+{
+public Integer saveCourse(Course c);
+public List<Course> getAllCourse();
+public Course getOneCourse(Integer id);
+}
+------------------------------------------------------------------
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
+@SpringBootApplication
+@EnableEurekaClient
+public class MsProjectClient3Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(MsProjectClient3Application.class, args);
+	}
+
+}
+
+/* insert into course values(101,5000,'sandip','advance java',200,300);
+insert into course values(102,6000,'Kiran','Micro Services',200,300);
+insert into course values(103,7000,'Madhu','Python',400,600);
+*/
+-----------------------------------------------------------------------------------------------------
